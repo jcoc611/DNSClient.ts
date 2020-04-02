@@ -1,0 +1,16 @@
+{
+  "name": "dnsclient-tests",
+  "version": "0.1.0",
+  "description": "Tests for DNSClient.ts",
+  "main": "jest",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "jcoc611",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1"
+  }
+}

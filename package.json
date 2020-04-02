@@ -1,0 +1,21 @@
+{
+	"name": "dnsclient.ts",
+	"version": "0.1.0",
+	"description": "A reference implementation non-native DNS Client in TypeScript for Node.js",
+	"main": "./dist/DNSClient.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"compile": "tsc -p ./",
+		"lint": "tslint -p ./",
+		"watch": "tsc -w -p ./"
+	},
+	"author": "Juan Osorio <Osorio.Juan@microsoft.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^12.11.5",
+		"ts-loader": "^6.2.1",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4"
+	},
+	"dependencies": {}
+}
