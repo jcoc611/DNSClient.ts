@@ -2,22 +2,41 @@
 
 A reference implementation non-native DNS Client in TypeScript for Node.js.
 
-**Not production ready.** In any case, you should use the native DNS clients
+**Not for production.** In any case, you should use the native DNS clients
 on production applications. Other than being more heavily-scrutinized, they have
 major perf benefits.
 
 # Usage
-First, install the dependencies `npm install`
-Then, you can do queries like so:
-```javascript
-import { DNSClient } from './src/DNSClient';
-import { UDPTransport } from './src/transports/UDPTransport';
+Get the dependency using `npm install DNSClient.ts`
 
-let client = new DNSClient(new UDPTransport('1.1.1.1'));
-let msg = await client.query({
+Then, you can do queries like so:
+```TypeScript
+import { DNSClient, Types } from 'DNSClient.ts';
+
+// You may also use 'udp' and 'tls' as alternative transports
+let client = new DNSClient('tcp', '1.1.1.1');
+client.query({
     name: 'google.com',
-    type: RecordType.A,
-    qClass: RecordClass.IN
+    type: Types.RecordType.A,
+    qClass: Types.RecordClass.IN
+}).then( (response: Types.IMessage) => {
+    console.log(response);
+    /*
+    Response Example
+    {
+        header: {
+            id: 0, qr: true, opcode: 0, aa: false, tc: false, rd: false, ra: true,
+            z: 0, rcode: 0, qdcount: 1, ancount: 1, nscount: 0, arcount: 0
+        },
+        questions: [{ name: 'google.com', type: 1, qClass: 1 }],
+        answers: [{
+            name: '', type: 1, class: 1, ttl: 116, rdLength: 4,
+            rdata: { address: '172.217.14.238' }
+        }],
+        authorities: [],
+        additionals: []
+    }
+    */
 });
 ```
 

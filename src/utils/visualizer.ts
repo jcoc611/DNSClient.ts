@@ -1,6 +1,6 @@
-import { BufferIO } from "./BufferIO";
-import { DnsMessage } from "./types";
-import { IMessage } from "./interfaces";
+import { BufferIO } from "../BufferIO";
+import { DnsMessage } from "../types";
+import { IMessage } from "../interfaces";
 
 export class DnsMessageVisualizer {
 	static visualizeBuffer(buf: Buffer) {

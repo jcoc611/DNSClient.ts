@@ -9,5 +9,5 @@
 		"rootDir": "src",
 		"lib": [ "esnext" ]
 	},
-	"exclude": [ "node_modules", "tests" ]
+	"exclude": [ "dist", "node_modules", "tests" ]
 }
